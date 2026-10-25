@@ -1,0 +1,57 @@
+{
+  "mcpServers": {
+    "jennifer-doudna-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "DOUDNA",
+        "TARGET_CHAIN": "Sui",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "verify_jennifer_doudna_discovery",
+          "description": "Verifies core invariant principles: Co-invention of CRISPR-Cas9 programmable RNA-guided genome editing (2020 Chemistry Nobel)",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "input_data": {
+                "type": "string"
+              },
+              "precision_level": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "input_data"
+            ]
+          }
+        },
+        {
+          "name": "model_jennifer_doudna_telemetry",
+          "description": "Models high-assurance domain telemetry for Biochemistry & Genome Editing",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "telemetry_vector": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            },
+            "required": [
+              "telemetry_vector"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
